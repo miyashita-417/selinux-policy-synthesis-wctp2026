@@ -1,8 +1,8 @@
-\# 機能要件と論理制約の詳細定義
+\# Detailed definitions of functional requirements and logical constraints
 
 
 
-本ドキュメントでは、論文内において紙面の都合上省略した機能要件および論理制約の全容を記述する。
+This document describes the full details of the functional requirements and logical constraints omitted from the paper due to space limitations.
 
 
 
@@ -10,35 +10,35 @@
 
 
 
-（１）PIDファイル制御に関する機能要件と制約
+（１）Functional requirements and constraints for PID file control
 
 <br>
 
-PIDファイル制御の機能要件は以下の通りである。
+The functional requirements for PID file control are as follows:
 
 
 
-・mydaemon\_tが親ディレクトリ内を通過および探索する。
+・Traverse and search inside the parent directory.
 
-・mydaemon\_tが親ディレクトリに対して書き込みを行う。
+・Write to the parent directory.
 
-・mydaemon\_tが親ディレクトリに新しいファイル名を追加する。
+・Add a new file name to the parent directory.
 
-・mydaemon\_tが親ディレクトリからファイル名を削除する。
+・Remove a file name from the parent directory.
 
-・mydaemon\_tが親ディレクトリ内にファイルを作成する際、そのラベルを自動的にPIDファイルのタイプに遷移させる。
+・Automatically transition the label to the PID file type when creating a file in the parent directory.
 
-・mydaemon\_tがPIDファイルを新規作成する。
+・Create a new PID file.
 
-・mydaemon\_tがPIDファイルを開く。
+・Open the PID file.
 
-・mydaemon\_tがPIDファイルへデータを書き込む。
+・Write data to the PID file.
 
-・mydaemon\_tがPIDファイルの属性情報を参照する。
+・Retrieve attributes of the PID file.
 
-・mydaemon\_tがPIDファイルをロックする。
+・Lock the PID file.
 
-・mydaemon\_tがPIDファイルを削除する。
+・Delete the PID file.
 
 
 
@@ -46,7 +46,7 @@ PIDファイル制御の機能要件は以下の通りである。
 
 
 
-上記のPIDファイル制御に関する機能要件を、論理制約 $\\phi\_{pid}$ として以下のように定義する。
+The above functional requirements for PID file control are defined as the logical constraint $\\phi\_{pid}$ as follows:
 
 
 
@@ -78,23 +78,23 @@ $\\phi\_{pid}$ = $(allow(\\texttt{mydaemon\\\_t}, \\texttt{var\\\_run\\\_t}, \\t
 
 ---
 
-（２）設定ファイル読み込みに関する機能要件と制約
+（２）Functional requirements and constraints for configuration file reading
 
 <br>
 
-設定ファイルの機能要件は以下の通りである。
+The functional requirements for the configuration file are as follows:
 
 
 
-・mydaemon\_tが親ディレクトリ内を通過および探索する。
+・Traverse and search inside the parent directory.
 
-・mydaemon\_tが親ディレクトリの属性情報を参照する。
+・Retrieve attributes of the parent directory.
 
-・mydaemon\_tが設定ファイルを開く。
+・Open the configuration file.
 
-・mydaemon\_tが設定ファイルの内容を読み取る。
+・Read the contents of the configuration file.
 
-・mydaemon\_tが設定ファイルの属性情報を参照する。
+・Retrieve attributes of the configuration file.
 
 
 
@@ -102,7 +102,7 @@ $\\phi\_{pid}$ = $(allow(\\texttt{mydaemon\\\_t}, \\texttt{var\\\_run\\\_t}, \\t
 
 
 
-上記の設定ファイル読み込みに関する機能要件を、論理制約 $\\phi\_{conf}$ として以下のように定義する。
+The above functional requirements for configuration file reading are defined as the logical constraint $\\phi\_{conf}$ as follows:
 
 
 
@@ -120,29 +120,29 @@ $\\phi\_{conf}$ = $(allow(\\texttt{mydaemon\\\_t}, \\texttt{etc\\\_t}, \\texttt{
 
 ---
 
-（３）ログファイル記録に関する機能要件と制約
+（３）Functional requirements and constraints for log file recording
 
 <br>
 
-ログファイルの機能要件は以下の通りである。
+The functional requirements for the log file are as follows:
 
 
 
-・mydaemon\_tが親ディレクトリ内を通過および探索する。
+・Traverse and search inside the parent directory.
 
-・mydaemon\_tが親ディレクトリに対して書き込みを行う。
+・Write to the parent directory.
 
-・mydaemon\_tが親ディレクトリに新しいログファイル名を追加する。
+・Add a new log file name to the parent directory.
 
-・mydaemon\_tが親ディレクトリ内にファイルを作成する際、そのラベルを自動的にログファイルのタイプに遷移させる。
+・Automatically transition the label to the log file type when creating a file in the parent directory.
 
-・mydaemon\_tがログファイルを新規作成する。
+・Create a new log file.
 
-・mydaemon\_tがログファイルを開く。
+・Open the log file.
 
-・mydaemon\_tがログファイルの属性情報を参照する。
+・Retrieve attributes of the log file.
 
-・mydaemon\_tがログファイルの末尾にデータを追加する。
+・Append data to the log file.
 
 
 
@@ -150,7 +150,7 @@ $\\phi\_{conf}$ = $(allow(\\texttt{mydaemon\\\_t}, \\texttt{etc\\\_t}, \\texttt{
 
 
 
-上記のログファイル記録に関する機能要件を、論理制約 $\\phi\_{log}$ として以下のように定義する。
+The above functional requirements for log file recording are defined as the logical constraint $\\phi\_{log}$ as follows:
 
 
 
@@ -174,17 +174,17 @@ $\\phi\_{log}$ = $(allow(\\texttt{mydaemon\\\_t}, \\texttt{var\\\_log\\\_t}, \\t
 
 ---
 
-（４）共通機能要件と共通制約
+（４）Common functional requirements and constraints
 
 <br>
 
-ログファイルおよびPIDファイルへ到達するための共通要件は以下の通りである。
+The common requirements to reach the log file and PID file are as follows:
 
 
 
-・mydaemon\_tが上位ディレクトリ内を通過および探索する。
+・Traverse and search inside the upper directory.
 
-・mydaemon\_tが上位ディレクトリの属性情報を参照する。
+・Retrieve attributes of the upper directory.
 
 
 
@@ -192,7 +192,7 @@ $\\phi\_{log}$ = $(allow(\\texttt{mydaemon\\\_t}, \\texttt{var\\\_log\\\_t}, \\t
 
 
 
-上記の共通要件を、論理制約 $\\phi\_{common}$ として以下のように定義する。
+The above common requirements are defined as the logical constraint $\\phi\_{common}$ as follows:
 
 
 
@@ -204,25 +204,25 @@ $\\phi\_{common}$ = $(allow(\\texttt{mydaemon\\\_t}, \\texttt{var\\\_t}, \\textt
 
 ---
 
-（５）ネットワーク待ち受けに関する機能要件と制約
+（５）Functional requirements and constraints for network listening
 
 <br>
 
-ネットワーク待ち受けの機能要件は以下の通りである。
+The functional requirements for network listening are as follows:
 
 
 
-・mydaemon\_tがTCPソケットを作成する。
+・Create a TCP socket.
 
-・mydaemon\_tがソケットの設定を変更する。
+・Change socket settings.
 
-・mydaemon\_tがソケットにポートを紐付ける。
+・Bind a port to the socket.
 
-・mydaemon\_tが、ポートタイプ $\\texttt{http\\\_cache\\\_port\\\_t}$ を使用する。
+・Use the port type $\texttt{http\_cache\_port\_t}$.
 
-・mydaemon\_tがノードタイプ $\\texttt{node\\\_t}$ を使用する。
+・Use the node type $\texttt{node\_t}$.
 
-・mydaemon\_tが接続待ち状態にする。
+・Listen for connections.
 
 
 
@@ -230,7 +230,7 @@ $\\phi\_{common}$ = $(allow(\\texttt{mydaemon\\\_t}, \\texttt{var\\\_t}, \\textt
 
 
 
-上記のネットワーク待ち受けに関する機能要件を、制約 $\\phi\_{net}$ として定義する。
+The above functional requirements for network listening are defined as the constraint $\\phi\_{net}$ as follows:
 
 
 
@@ -245,4 +245,3 @@ $\\phi\_{net}$ = $(allow(\\texttt{mydaemon\\\_t}, \\texttt{mydaemon\\\_t}, \\tex
 &nbsp;              $\\land$ $(allow(\\texttt{mydaemon\\\_t}, \\texttt{node\\\_t}, \\texttt{tcp\\\_socket}, \\texttt{node\\\_bind}) = \\mathrm{True}) $
 
 &nbsp;              $\\land$ $(allow(\\texttt{mydaemon\\\_t}, \\texttt{mydaemon\\\_t}, \\texttt{tcp\\\_socket}, \\texttt{listen}) = \\mathrm{True}) $
-
