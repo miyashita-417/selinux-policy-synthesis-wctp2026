@@ -218,9 +218,9 @@ The functional requirements for network listening are as follows:
 
 ・Bind a port to the socket.
 
-・Use the port type $\texttt{http\_cache\_port\_t}$.
+・Use the port type $\\texttt{http\\\_cache\\\_port\\\_t}$.
 
-・Use the node type $\texttt{node\_t}$.
+・Use the node type $\\texttt{node\\\_t}$.
 
 ・Listen for connections.
 
