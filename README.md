@@ -1,4 +1,4 @@
-# Constraint-Based Automatic Synthesis of SELinux Policies Considering Least Privilege
+# Automated Synthesis of Least-Privilege SELinux Policies via SMT-Based Optimization
 
 This repository contains the verification code and supplementary materials for the paper presented at WCTP 2026.
 
